@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Редактор для применения стилей к вводимому тексту."/>
+  <meta name="author" content="Алексашин А.С.">
+  <title>Text redactor</title>
+  <link rel="stylesheet" type="text/css" href="page.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+ </head>
+ <body>
+  <header>
+    <ul class="tools">
+        <li class="font-options">
+            <select id="font-family" size=1 title="Шрифт">
+                <option value="Times New Roman" selected>Times New Roman</option>
+                <option value="Roboto" >Roboto</option>
+                <option value="Arial">Arial</option>
+                <option value="Helvetica">Helvetica</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+            </select>
+            <input id="font-size" type="number" min="8" max="72" value="14" step=2 title="Размер шрифта" required/>
+        </li>
+        <li>
+            <input type="checkbox" id="bold" class="tool-checkbox">
+            <label for="bold" class="tool-button" title="Жирный"><b>Ж</b></label>
+            <input type="checkbox" id="italic" class="tool-checkbox">
+            <label for="italic" class="tool-button" title="Курсив"><i>К</i></label>
+            <input type="checkbox" id="strike" class="tool-checkbox">
+            <label for="strike" class="tool-button" title="Зачёркнутый"><span class="strike-label">Ч</span></label>
+        </li>
+        <li>
+            <fieldset>
+                <legend>Выравнивание</legend>
+                <input type="radio" name="align" id="left" class="tool-checkbox" checked/>
+                <label for="left" class="tool-button" title="По левому краю"><</label>
+                <input type="radio" name="align" id="center" class="tool-checkbox"/>
+                <label for="center" class="tool-button" title="По центру">=</label>
+                <input type="radio" name="align" id="right" class="tool-checkbox"/>
+                <label for="right" class="tool-button" title="По правому краю">></label>
+                <input type="radio" name="align" id="justify" class="tool-checkbox"/>
+                <label for="justify" class="tool-button" title="По ширине">⇔</label>
+            </fieldset>
+        </li>
+        <li class="color-choose">
+            <button type="button" id="colorBtn" class="tool-button color-btn" title="Цвет">
+                <span class="color-preview"></span>
+            </button>
+            <div id="colorDropdown" class="color-dropdown">
+                <div class="color-row">
+                    <label for="r">R:</label>
+                    <input type="number" id="rVal" min="0" max="255" value="0"/>
+                    <input type="range" id="r" min="0" max="255" value="0"/>
+                </div>
+
+                <div class="color-row">
+                    <label for="g">G:</label>
+                    <input type="number" id="gVal" min="0" max="255" value="0"/>
+                    <input type="range" id="g" min="0" max="255" value="0"/>
+                </div>
+
+                <div class="color-row">
+                    <label for="b">B:</label>
+                    <input type="number" id="bVal" min="0" max="255" value="0"/>
+                    <input type="range" id="b" min="0" max="255" value="0"/>
+                </div>
+            </div>
+        </li>
+    </ul>
+  </header>
+  <main>
+    <div class="page">
+        <textarea>
+Съешь же ещё этих мягких французских булок да выпей чаю. Друг мой эльф! Яшке б свёз птиц южных чащ!
+The five boxing wizards jump quickly.
+        </textarea>
+    </div>
+  </main>
+  <script src="text-styles.js"></script>
+ </body>
+</html>
