@@ -1,0 +1,55 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid black;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+thead th, tfoot td {
+    padding: 10px 20px;
+    text-align: center;
+    white-space: pre-line;
+}
+
+thead, tfoot {
+    border: 2px solid black;
+}
+
+td, th { border: 1px solid #999; padding: 4px; text-align: right; }
+
+.centering-cell {
+    text-align: center;
+}
+
+.arrowUp { color: green; }
+.arrowDown { color: red; }
+
+.summary-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+svg {
+    vertical-align: middle;
+}
