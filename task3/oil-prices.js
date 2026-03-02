@@ -14,6 +14,8 @@ const arrowDownSVG = `
   <path d="M12 20l6-8h-4V4h-4v8H6z"/>
 </svg>`;
 
+const formatter = new Intl.NumberFormat('en-EN', { signDisplay: 'exceptZero' });
+
 const oilTableBody = document.querySelector('#oil-table tbody');
 
 let growths = [], chainIndices = [];
@@ -28,6 +30,8 @@ for (let t = 0; t < prices.length; t++) {
   let rPercent = "";
   let signal = "";
 
+  row.classList.add('row');
+
   if (t > 0) {
 
     let diff = price - prices[t - 1];
@@ -35,25 +39,32 @@ for (let t = 0; t < prices.length; t++) {
 
     dPrice = diff.toFixed(2);
     idxPercent = (index * 100).toFixed(2) + "%";
-    rPercent = ((index - 1) * 100).toFixed(2) + "%";
+    rPercent = formatter.format(((index - 1) * 100).toFixed(2)) + "%";
 
     growths.push(diff);
     chainIndices.push(index);
 
+
     if (diff > 0) {
       posCount++;
       signal = arrowUpSVG;
+      row.classList.add('row-up');
     } else if (diff < 0) {
       negCount++;
       signal = arrowDownSVG;
+      row.classList.add('row-down');
+    } else {
+        row.classList.add('row-neutral');
     }
+  } else {
+    row.classList.add('row-neutral');
   }
 
   row.innerHTML = `
-    <td class="centering-cell">${t + 1}</td>
-    <td class="centering-cell">${signal}</td>
+    <td>${t + 1}</td>
+    <td>${signal}</td>
     <td>${price.toFixed(2)}</td>
-    <td>${dPrice}</td>
+    <td>${formatter.format(dPrice)}</td>
     <td>${idxPercent}</td>
     <td>${rPercent}</td>
   `;
