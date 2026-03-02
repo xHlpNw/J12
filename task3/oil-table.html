@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Таблица цен на нефть."/>
+  <meta name="author" content="Алексашин А.С.">
+  <title>Oil prices</title>
+  <link rel="stylesheet" type="text/css" href="oil-table.css">
+ </head>
+ <body>
+  <main>
+    <table id="oil-table">
+        <thead>
+            <tr>
+                <th>День</th>
+                <th></th>
+                <th>Цена, USD</th>
+                <th>Прирост</th>
+                <th>Темп роста</th>
+                <th>Темп прироста</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2" class="index-column"><strong>Итог:</strong></td>
+                <td id="priceSummary"></td>
+                <td id="increaseSummary"></td>
+                <td id="growthRateSummary"></td>
+                <td id="increaseRateSummary"></td>
+            </tr>
+        </tfoot>
+    </table>
+  </main>
+  <script src="oil-prices.js"></script>
+ </body>
+</html>
